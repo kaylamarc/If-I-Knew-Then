@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/edcdcee58e.js" crossorigin="anonymous"></script>
+    <script src="js/forum.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
             <span id="if-then"> Then</span>
         </div>
         <div id="logout">
-            <button class="pink-buttons">Logout</button>
+            <button class="pink-buttons" onclick="doLogout();">Logout</button>
         </div>
     </header>
     <nav>
@@ -41,7 +42,7 @@
     <div class="mainDiv">
         <div id="header-with-button">
             <h1 class="header-label">Posts</h1>
-            <button class="green-button">&nbsp;+&nbsp;</button>
+            <button class="green-button" onclick="showCreateModal();">&nbsp;+&nbsp;</button>
         </div>
     </div>
     <div class="posts-section">
@@ -49,29 +50,15 @@
             <thead>
                 <th></th>
             </thead>
-            <tbody class="tbl-body">
-                <tr >
-                    <td class="row">
-                        <div class="thread-stuff">
-                            <div class="thread-header">
-                                <h1 class="thread-name"> Thread #1</h1>
-                                <div class="arrows-div">
-                                    <button class="arrow"><i class="fas fa-arrow-up"></i></button>
-                                    <button class="arrow"><i class="fas fa-arrow-down"></i></button>
-                                </div>
-                            </div>
-                            <span class="thumb-text">lorem ipsum delur blah blah blah</span>
-                        </div>
-                    </td>
-                </tr>
+            <tbody id="t-body" class="tbl-body">
             </tbody>
         </table>
     </div>
-    <div class="modal-container">
+    <div id="create-modal" class="modal-container">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="header-label">Create Post</h1>
-                <button type="button" class="arrow" onclick="hideAddModal()"><i class="fas fa-times"></i></button>
+                <button type="button" class="arrow" onclick="hideCreateModal();"><i class="fas fa-times"></i></button>
             </div>
             <div class="create-content">
                 <form>
@@ -84,7 +71,7 @@
                         <textarea id="content" name="posttext" rows="4" cols="50"></textarea>
                     </div>
                     <div class="sub-buttons">
-                        <input type="submit" class="green-button" value="Post">
+                        <button type="button" id="addPostButton" class="green-button" >Post</button><br>
                     </div>
                 </form>
             </div>

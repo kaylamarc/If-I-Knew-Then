@@ -1,12 +1,13 @@
-<DOCTYPE! html>
     <html>
 
     <head>
+        <meta name="description" value="Welcome to a safe space for women in tech">
         <title>If (I Knew) Then</title>
         <link rel="stylesheet" href="css/index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+        <script src="js/splash.js"></script>
     </head>
 
     <body>
@@ -22,17 +23,17 @@
         <div class="mainContent">
             <div class="col" id="left">
                 <h1 class="header-label">Login</h1>
-                <form>
+                <form onsubmit="doLogin()">
                     <div class="input-pair">
                         <label for="email">Email:</label><br>
                         <input type="text" id="email" name="email"><br>
                     </div>
                     <div class="input-pair">
                         <label for="password">Password:</label><br>
-                        <input type="text" id="password" name="password">
+                        <input type="password" id="password" name="password">
                     </div>
                     <div class="sub-buttons">
-                        <input type="submit" value="Login" class="pink-buttons"><br>
+                        <button type="button"class="pink-buttons"  onclick="doLogin();">Login</button><br>
                     </div>
                 </form>
             </div>
@@ -53,10 +54,10 @@
                     </div>
                     <div class="input-pair">
                         <label for="password">Password:</label><br>
-                        <input type="text" id="password" name="password">
+                        <input type="password" id="password" name="password">
                     </div>
                     <div class="sub-buttons">
-                        <input type="submit" value="Register" class="pink-buttons"><br>
+                        <button type="button"class="pink-buttons"  onclick="doRegister();">Register</button><br>
                     </div>
                 </form>
             </div>
